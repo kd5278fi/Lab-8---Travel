@@ -121,4 +121,34 @@
   <data name="regionsOfUsPic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\regionsOfUsPic.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cloudy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cloudy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flurries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flurries.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HeavyRain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HeavyRain.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LightRain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LightRain.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Partly Cloudy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Partly Cloudy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SleetSnow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SleetSnow.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Snow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Snow.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sunny" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sunny.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Thunderstorms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Thunderstorms.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Windy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
