@@ -9,7 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lab_10
-{
+{/* ABOUT THIS APP. THE PURPOSE OF THIS APP IS TO DEVELOP A WORKING TRAVEL APP THAT DISPLAYS ALL OF OUR WORKING KNOWLEGE OF C# PROGRAMMING 
+  * UP TO THIS POINT. Include the following: arrays and collection processing, input validation and exception handling, date processing and 
+  * calculations, output formats, great user experience including some graphics and maybe animation, PLUS all the default requirements such 
+  * as good GUI layout, tabbing, Enter and Esc keys, object/control naming, and documentation!
+  */
+
     public partial class Main : Form
     {
         public Main()
@@ -36,20 +41,21 @@ namespace Lab_10
         */
 
 
-
+        #region globalvariables 
         // public values ( might later be added to structure of class) 
 
         public DateTime dateout;
         public DateTime dateIn;
-        public List<DateTime> backUpdates = new List<DateTime>(); 
         
+        public List <string> areasTavelingTo = new List<string>();  
+        public string travelAreas = ""; 
+        public List<DateTime> backUpdates = new List<DateTime>(); 
+        // seasons picked and taken into account for the weather 
+        public string seas ;
 
-        /// <summary>
-        /// Opens a map to select destination region 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
+        public List<Image> ForeCastImagesBasedOnSeaons = new List<Image> { Properties.Resources.Cloudy,Properties.Resources.Sunny,Properties.Resources.Partly_Cloudy,Properties.Resources.LightRain, Properties.Resources.HeavyRain, Properties.Resources.Windy, Properties.Resources.Flurries,Properties.Resources.SleetSnow, Properties.Resources.Snow} ;
+        #endregion
+      
         // map button click 
         private void btnMap_Click(object sender, EventArgs e)
         {
@@ -101,6 +107,12 @@ namespace Lab_10
                     btnMap.Enabled = false; 
                     btnForecast.Enabled = false; 
                 }
+
+            // call the method to set the seasons. 
+                getSeason(dept, seas);
+                getSeason(comeBack, seas);
+
+
             
         }
 
@@ -114,22 +126,24 @@ namespace Lab_10
                 // set the current dateTime to most recent value 
                 DateTime thisCurrentRunningSessionDateAndtime = DateTime.Now;
 
-
+                
                 //todo get this working right. 
-                if (deptartureDate > thisCurrentRunningSessionDateAndtime)
+                if (deptartureDate.AddSeconds(20) < thisCurrentRunningSessionDateAndtime)
                 {
                     // then do this 
-                    MessageBox.Show("Check your dates you cannot depart back in time", " Hey McFly!");
-
-                     // throw the flag 
+                    MessageBox.Show("Check your dates you cannot go back in time.", " Hey McFly!");
+                    // throw the flag 
                     return false;
                 }
                 else if (returnDateTime < deptartureDate)
                 {
                     MessageBox.Show("Return date cannot be before departure date. Check your dates and try again ", "Invalid Date Selection"); 
-    
                     // throw the flag 
                     return false;
+                }
+                else if (deptartureDate == thisCurrentRunningSessionDateAndtime)
+                {
+                    return true;
                 }
                 return true;
             }
@@ -152,9 +166,10 @@ namespace Lab_10
             dateIn = Convert.ToDateTime(comeback.Value);
         }
 
+        // Main for Load settings. 
         private void Main_Load(object sender, EventArgs e)
         {
-            //todo figure out why this isn't working 
+            // loads the map button and forecast button disabled until dates are entered. 
             dateTimePickerReturnDate.Value = dateTimePickerReturnDate.Value.AddDays(1);
             btnMap.Enabled = false;
             btnForecast.Enabled = false;
@@ -193,16 +208,90 @@ namespace Lab_10
             progressBar1.Value = (20); 
         }
 
-            //Do i need to create a tag to recieve Form 2 state selection? 
+        //Do i need to create a tag to recieve Form 2 state selection? 
+        
+        // travel gear 
+        List<String> summerGear = new List<string> () { "Swim trunks","sun tan lotion", "shorts", "dress warm", "sandals", "shorts" } ;
 
-            
+        List<string> winterGear = new List<string>() {"Heavy winter coat", "gloves", "stocking cap" , "long johns" } ;
 
-            
+        List<string> rainGear = new List<string> () { "Umbrella","rain boots","prepare for rain"} ;
+
+        // season info 
+        // Spring March - June
+        // Summer June - September 
+        // Fall September - December 
+        // winter December - March 
+        
+        // only needs to pass in one datetime. Can set both the start trip date and finish trip date season. run this method for each date.
+        public void getSeason(DateTime dtValue, string nameOfVariable)
+        {
+             string weatherSetter = ""; 
+            // spring conditions
+            if (dtValue.Month <= 3 && dtValue.Day <= 21 || dtValue.Month <= 6 && dtValue.Day >=22)
+            {
+                weatherSetter  += seasons.Spring.ToString() + ""; 
+            }
+            //summer
+            else if  (dtValue.Month >= 6  || dtValue.Month <= 8)
+            {
+                weatherSetter += seasons.Summer.ToString(); 
+            }
+                //fall 
+            else if (dtValue.Month >=9 || (dtValue.Month <= 12 && dtValue.Day <=22))
+	        {
+                weatherSetter += seasons.Fall.ToString() + "";
+            }
+                //winter
+            else if (dtValue.Month >=1  || dtValue.Month >= 3)
+            {
+                weatherSetter += seasons.Winter.ToString() + "";
+            }
+        }
+
+  
+        // this method will recieve the seasons set by range of dates entered. 
+        public void setPossibleWeatherIcons(string seasonGlobalVariable,List<Image> listOfWeatherPics)
+        {
+            if (seasonGlobalVariable.Contains("Summer"))
+            {
+                // no snow or flurries or temps below 60 degrees
+                
+                // weather icon range 0,7
+                // temp range 60, 102
+                //pic avaialable 
+                
+            }
+            // else // weather icon range 0,9 
+            // temp range 0, 23 
 
         }
 
-    }
+        private void btnMap_MouseHover(object sender, EventArgs e)
+        {
+            e.ToString();
+        }
 
         
+        // the plan is to have the date by now and recieve the regions selection from the user. 
+   
+        // temps based on season of trip. 
+
+        // suggested travel gear for trip: 
+
+        // save trip data to a file / word document 
+    }
     
-        
+    }
+
+
+
+enum seasons 
+{
+     Spring,
+     Summer, 
+     Fall, 
+     Winter
+}
+
+ 
