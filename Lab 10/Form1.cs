@@ -61,7 +61,7 @@ namespace Lab_10
 
             // show dialog box. 
             //this.Hide();
-            this.Visible = false;
+           // this.Visible = false;
         }
 
         // closes the main window 

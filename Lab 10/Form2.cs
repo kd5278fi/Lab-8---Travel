@@ -18,8 +18,8 @@ namespace Lab_10
         }
 
         // Form2Map f2 = new Form2Map();
-        Main f1 = new Main();
-
+        //Main f1 = new Main();
+        
         // list of regions 
         List<string> RegionsPickedList = new List<string>();
 
