@@ -43,6 +43,7 @@ namespace Lab_10
             this.Hide();
             f1.Show();
            // f1.Enabled = true;
+            
            
         }
 
@@ -95,6 +96,11 @@ namespace Lab_10
             {
                 RegionsPickedList.Add(regions.West.ToString()); 
             }
+            else if (checkBoxWest.Checked == false && (RegionsPickedList.Contains(regions.West.ToString())))
+            {
+                RegionsPickedList.Remove(regions.West.ToString());
+            }
+            
         }
 
         private void checkBoxSouthWest_CheckedChanged(object sender, EventArgs e)
@@ -102,6 +108,10 @@ namespace Lab_10
             if (checkBoxSouthWest.Checked == true)
             {
                 RegionsPickedList.Add(regions.Soutwest.ToString()); 
+            }
+            else if (checkBoxSouthWest.Checked == false && (RegionsPickedList.Contains(regions.Soutwest.ToString())))
+            {
+                RegionsPickedList.Remove(regions.Soutwest.ToString());
             }
         }
 
@@ -111,6 +121,10 @@ namespace Lab_10
             {
                 RegionsPickedList.Add(regions.Midwest.ToString());
             }
+            else if (checkBoxMidWest.Checked == false && (RegionsPickedList.Contains(regions.Midwest.ToString())))
+            {
+                RegionsPickedList.Remove(regions.Midwest.ToString());
+            }
         }
 
         private void checkBoxSouthEast_CheckedChanged(object sender, EventArgs e)
@@ -119,6 +133,10 @@ namespace Lab_10
             {
                 RegionsPickedList.Add(regions.Southeast.ToString()); 
             }
+            else if (checkBoxSouthEast.Checked == false && (RegionsPickedList.Contains(regions.Southeast.ToString())))
+            {
+                RegionsPickedList.Remove(regions.Southeast.ToString());
+            }
         }
 
         private void checkBoxNorthEast_CheckedChanged(object sender, EventArgs e)
@@ -126,6 +144,10 @@ namespace Lab_10
             if (checkBoxNorthEast.Checked == true)
             {
                 RegionsPickedList.Add(regions.Northeast.ToString()); 
+            }
+            else if (checkBoxNorthEast.Checked == false && (RegionsPickedList.Contains(regions.Northeast.ToString())))
+            {
+                RegionsPickedList.Remove(regions.Northeast.ToString());
             }
         }
         #endregion

@@ -49,7 +49,8 @@ namespace Lab_10
         
         public List <string> areasTavelingTo = new List<string>();  
         public string travelAreas = ""; 
-        public List<DateTime> backUpdates = new List<DateTime>(); 
+        public List<DateTime> backUpdates = new List<DateTime>();
+        public List<string> listSource = new List<string>(); 
         // seasons picked and taken into account for the weather 
         public string seas ;
 
@@ -89,12 +90,17 @@ namespace Lab_10
                 // call the methods to find the departure and return date 
                 getSetPickedTripDates(dateTimePickerDeparture, dateTimePickerReturnDate);
 
-                listBoxTripDatesOrData.Items.Add("Depature Date: " + dept.ToShortDateString() + "  Return Date:" + comeBack.ToShortDateString());
+                listBoxTripDatesOrData.Items.Add("Depature Date: " + dept.ToShortDateString() + "  Return Date: " + comeBack.ToShortDateString());
+                
+               // listSource.Add("Departure Date: " + dept.ToShortDateString() + "  Return Date: " + comeBack.ToShortDateString());
+               
                 // pass down dept and comeback so that to a single method to determine both. 
                 backUpdates.Add(dept); 
-                backUpdates.Add(comeBack); 
+                backUpdates.Add(comeBack);
+               
+              //  copyListcontents(listBoxTripDatesOrData); 
                 progressBar1.Value = (10);
-                
+            //    listSource = listBoxTripDatesOrData.Items.ToString(); 
                 // check to see if the list contains date to enable the map and forecast button. 
             }
                 if(listBoxTripDatesOrData.Items.Count >=1)
@@ -112,6 +118,7 @@ namespace Lab_10
                 getSeason(dept, seas);
                 getSeason(comeBack, seas);
 
+                copyListcontents(listBoxTripDatesOrData); 
 
             
         }
@@ -173,6 +180,7 @@ namespace Lab_10
             dateTimePickerReturnDate.Value = dateTimePickerReturnDate.Value.AddDays(1);
             btnMap.Enabled = false;
             btnForecast.Enabled = false;
+          //  listBoxTripDatesOrData.DataSource = listSource; 
         }
 
         // when this button is clicked bring up a seperate form for the gas calculator 
@@ -272,6 +280,20 @@ namespace Lab_10
             e.ToString();
         }
 
+        public void copyListcontents(ListBox datesListbox)
+        {
+            if (datesListbox.Items.Count == -1)
+            {
+                // do nothing because there is nothing in the list. 
+            }
+            else
+            {
+               
+                {
+                    listSource.Add(datesListbox.Items.ToString());
+                }
+            }
+        }
         
         // the plan is to have the date by now and recieve the regions selection from the user. 
    
