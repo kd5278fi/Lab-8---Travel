@@ -53,6 +53,8 @@
             this.pbForecastDay2 = new System.Windows.Forms.PictureBox();
             this.pbForecastDay3 = new System.Windows.Forms.PictureBox();
             this.groupBoxForecastIcons = new System.Windows.Forms.GroupBox();
+            this.buttonTripSummary = new System.Windows.Forms.Button();
+            this.lblTripDates = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbForecastDay1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbForecastDay2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbForecastDay3)).BeginInit();
@@ -122,10 +124,11 @@
             // listBoxTripDatesOrData
             // 
             this.listBoxTripDatesOrData.FormattingEnabled = true;
-            this.listBoxTripDatesOrData.Location = new System.Drawing.Point(192, 287);
+            this.listBoxTripDatesOrData.Location = new System.Drawing.Point(437, 335);
             this.listBoxTripDatesOrData.Name = "listBoxTripDatesOrData";
-            this.listBoxTripDatesOrData.Size = new System.Drawing.Size(305, 95);
+            this.listBoxTripDatesOrData.Size = new System.Drawing.Size(243, 43);
             this.listBoxTripDatesOrData.TabIndex = 7;
+            this.listBoxTripDatesOrData.Visible = false;
             // 
             // label4
             // 
@@ -279,6 +282,25 @@
             this.groupBoxForecastIcons.TabStop = false;
             this.groupBoxForecastIcons.Text = "groupBox1";
             // 
+            // buttonTripSummary
+            // 
+            this.buttonTripSummary.Location = new System.Drawing.Point(602, 182);
+            this.buttonTripSummary.Name = "buttonTripSummary";
+            this.buttonTripSummary.Size = new System.Drawing.Size(107, 23);
+            this.buttonTripSummary.TabIndex = 24;
+            this.buttonTripSummary.Text = "Trip Summary";
+            this.buttonTripSummary.UseVisualStyleBackColor = true;
+            this.buttonTripSummary.Click += new System.EventHandler(this.buttonTripSummary_Click);
+            // 
+            // lblTripDates
+            // 
+            this.lblTripDates.AutoSize = true;
+            this.lblTripDates.Location = new System.Drawing.Point(236, 287);
+            this.lblTripDates.Name = "lblTripDates";
+            this.lblTripDates.Size = new System.Drawing.Size(35, 13);
+            this.lblTripDates.TabIndex = 25;
+            this.lblTripDates.Text = "label6";
+            // 
             // Main
             // 
             this.AcceptButton = this.btnEnterDates;
@@ -287,6 +309,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(750, 424);
+            this.Controls.Add(this.lblTripDates);
+            this.Controls.Add(this.buttonTripSummary);
             this.Controls.Add(this.groupBoxForecastIcons);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.labelHighLowDay3);
@@ -348,6 +372,8 @@
         private System.Windows.Forms.PictureBox pbForecastDay2;
         private System.Windows.Forms.PictureBox pbForecastDay3;
         private System.Windows.Forms.GroupBox groupBoxForecastIcons;
+        private System.Windows.Forms.Button buttonTripSummary;
+        private System.Windows.Forms.Label lblTripDates;
 
     }
 }

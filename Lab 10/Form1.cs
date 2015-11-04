@@ -50,7 +50,9 @@ namespace Lab_10
         public List <string> areasTavelingTo = new List<string>();  
         public string travelAreas = ""; 
         public List<DateTime> backUpdates = new List<DateTime>();
-        public List<string> listSource = new List<string>(); 
+        public List<string> listSource = new List<string>();
+
+        public string travelDates = "";
         // seasons picked and taken into account for the weather 
         public string seas ;
 
@@ -97,7 +99,7 @@ namespace Lab_10
                 getSetPickedTripDates(dateTimePickerDeparture, dateTimePickerReturnDate);
 
                 listBoxTripDatesOrData.Items.Add("Depature Date: " + dept.ToShortDateString() + "  Return Date: " + comeBack.ToShortDateString());
-                
+                lblTripDates.Text = ("Depature Date: " + dept.ToShortDateString() + "  Return Date: " + comeBack.ToShortDateString());
                // listSource.Add("Departure Date: " + dept.ToShortDateString() + "  Return Date: " + comeBack.ToShortDateString());
                
                 // pass down dept and comeback so that to a single method to determine both. 
@@ -299,6 +301,12 @@ namespace Lab_10
                     listSource.Add(datesListbox.Items.ToString());
                 }
             }
+        }
+
+        private void buttonTripSummary_Click(object sender, EventArgs e)
+        {
+            // display the trip summary. 
+            MessageBox.Show( 
         }
         
         // the plan is to have the date by now and recieve the regions selection from the user. 
