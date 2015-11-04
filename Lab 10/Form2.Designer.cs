@@ -133,6 +133,7 @@
             // 
             // Form2Map
             // 
+            this.AcceptButton = this.btnGoBack;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnGoBack;

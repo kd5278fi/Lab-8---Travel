@@ -60,15 +60,21 @@ namespace Lab_10
         // map button click 
         private void btnMap_Click(object sender, EventArgs e)
         {
-
+             
             Form2Map f2 = new Form2Map();
             f2.Enabled = true;
-            f2.Show();
+            f2.ShowDialog();
 
+            DialogResult selectedbutton = f2.DialogResult;
+            if (selectedbutton == DialogResult.OK)
+            {
+                this.travelAreas = f2.Tag.ToString();
+                MessageBox.Show("Selected travel Areas " + this.travelAreas);
+            }
 
             // show dialog box. 
             //this.Hide();
-            this.Visible = false;
+            //this.Visible = false;
         }
 
         // closes the main window 

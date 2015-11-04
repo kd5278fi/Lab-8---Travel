@@ -40,8 +40,10 @@ namespace Lab_10
         private void gobackToMain()
         {
          //todo rewrite this is proper form.    
-            this.Hide();
-            f1.Show();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+            //this.Hide();
+            //f1.Show();
            // f1.Enabled = true;
             
            
